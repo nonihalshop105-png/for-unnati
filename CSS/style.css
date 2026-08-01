@@ -1,0 +1,700 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    margin:0;
+
+    background:#0b1020;
+
+    color:white;
+
+    font-family:Arial,sans-serif;
+
+}
+
+.hero{
+
+    width:100%;
+
+    height:100vh;
+
+    display:none;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    animation: fadeUp 1.8s ease;
+
+}
+
+.hero h1{
+
+    font-size:72px;
+
+    margin-bottom:20px;
+
+    text-shadow:
+
+    0 0 10px #ff4d6d,
+
+    0 0 25px #ff4d6d,
+
+    0 0 45px #ff4d6d;
+
+}
+.hero p{
+
+    font-size:22px;
+
+    margin-bottom:40px;
+
+    color:#d9d9d9;
+}
+
+button{
+
+    padding:15px 35px;
+
+    font-size:20px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    background:#ff4d6d;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:scale(1.1);
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+.chapter{
+
+    height:100vh;
+
+    background:#141b33;
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+.chapter h2{
+
+    color:#ff7b9c;
+
+    margin-bottom:20px;
+
+}
+
+.chapter h1{
+
+    font-size:50px;
+
+    margin-bottom:30px;
+
+}
+
+.chapter p{
+
+    max-width:700px;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+}
+#stars{
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+pointer-events:none;
+
+}
+
+.star{
+
+position:absolute;
+
+width:3px;
+
+height:3px;
+
+background:white;
+
+border-radius:50%;
+
+animation:twinkle 3s infinite;
+
+opacity:.7;
+
+}
+
+@keyframes twinkle{
+
+0%{
+
+opacity:.2;
+
+transform:scale(1);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1.8);
+
+}
+
+100%{
+
+opacity:.2;
+
+transform:scale(1);
+
+}
+
+}
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+.memory-scene{
+
+height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+}
+
+.memory-title{
+
+font-size:56px;
+
+margin-bottom:70px;
+
+color:#ff7aa2;
+
+}
+
+.memory-card{
+
+opacity:1;
+
+transition:opacity .9s ease;
+
+}
+
+.memory-card img{
+
+width:420px;
+
+height:560px;
+
+object-fit:cover;
+
+border-radius:25px;
+
+box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+animation:kenburns 6s linear infinite;
+
+}
+
+#memoryCaption{
+
+margin-top:35px;
+
+font-size:30px;
+
+max-width:700px;
+
+line-height:1.5;
+
+}
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(120px);
+
+    transition:all 1.2s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+#intro{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100vh;
+
+background:#050816;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:9999;
+
+}
+
+#typing{
+
+font-size:52px;
+
+color:white;
+
+margin-bottom:60px;
+
+text-align:center;
+
+}
+
+#startBtn{
+
+display:none;
+
+padding:18px 40px;
+
+font-size:22px;
+
+}
+.story{
+
+margin-top:50px;
+
+}
+
+.story-container{
+
+height:55vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.story-title{
+
+font-size:56px;
+
+margin-bottom:90px;
+
+}
+
+#storyText{
+
+font-size:38px;
+
+font-weight:300;
+
+max-width:900px;
+
+text-align:center;
+
+opacity:0;
+
+transition:1s;
+
+min-height:80px;
+
+}
+#cinemaFade{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:black;
+
+opacity:0;
+
+pointer-events:none;
+
+transition:opacity .8s ease;
+
+z-index:99999;
+
+}
+
+#cinemaFade.active{
+
+opacity:1;
+
+}
+@keyframes kenburns{
+
+0%{
+
+transform:scale(1);
+
+}
+
+100%{
+
+transform:scale(1.08);
+
+}
+
+}
+
+/* ===========================
+   FIVE TINY LETTERS
+=========================== */
+
+.letter-section{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:80px 20px;
+
+background:#0f1733;
+
+}
+
+.letter-paper{
+
+width:750px;
+
+max-width:90%;
+
+background:#fffdf7;
+
+padding:70px;
+
+border-radius:20px;
+
+box-shadow:0 25px 80px rgba(0,0,0,.35);
+
+text-align:left;
+
+position:relative;
+
+}
+
+#letterTitle{
+
+font-size:42px;
+
+color:#ff5d8f;
+
+margin-bottom:40px;
+
+text-align:center;
+
+}
+
+#letterText{
+
+font-size:30px;
+
+line-height:2.1;
+
+color:#333;
+
+white-space:pre-line;
+
+min-height:320px;
+font-family:"Caveat",cursive;
+
+}
+
+.signature{
+
+margin-top:50px;
+
+font-size:28px;
+
+text-align:right;
+
+color:#888;
+
+opacity:0;
+
+transition:1s;
+font-family:"Caveat",cursive;
+
+}
+.cursor{
+
+display:inline-block;
+
+width:2px;
+
+background:#333;
+
+margin-left:4px;
+
+animation:blink .8s infinite;
+
+}
+
+@keyframes blink{
+
+50%{
+
+opacity:0;
+
+}
+
+}
+
+/* ===========================
+   Relationship counter
+=========================== */
+
+.counter-section{
+
+height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+background:#0f1733;
+
+color:white;
+
+text-align:center;
+
+}
+
+.counter-section h2{
+
+font-size:60px;
+
+color:#ff6f91;
+
+margin-bottom:50px;
+
+}
+
+#loveCounter{
+
+font-size:42px;
+
+line-height:2;
+
+}
+/* ===========================
+   Ending Scene
+=========================== */
+
+.ending-scene{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+background:#000;
+
+color:white;
+
+padding:40px;
+
+}
+
+#endingText{
+
+font-size:55px;
+
+line-height:1.8;
+
+max-width:900px;
+white-space: pre-line;
+
+opacity:0;
+
+transition:1s;
+
+}
+/* ==========================
+   FINAL QUESTION
+========================== */
+
+.final-question{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:#070b18;
+
+    color:white;
+
+}
+
+#questionText{
+
+    font-size:58px;
+
+    line-height:1.4;
+
+    opacity:1;
+
+}
+
+#yesBtn{
+
+    margin-top:80px;
+
+    padding:20px 55px;
+
+    font-size:24px;
+
+    border:none;
+
+    border-radius:60px;
+
+    cursor:pointer;
+
+    background:#ff5f9f;
+
+    color:white;
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:1.2s;
+
+}
+
+#yesBtn.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+#yesBtn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 35px rgba(255,120,170,.6);
+
+}
